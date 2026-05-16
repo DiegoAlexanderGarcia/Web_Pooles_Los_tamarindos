@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tamarindos Pool & Estanco - El mejor lugar para jugar billar y disfrutar de tus bebidas favoritas.">
+    <title>Tamarindos Pool & Estanco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <nav>
+            <h1 class="logo">Tamarindos<span class="highlight">Pool</span></h1>
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Ambiente</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content" id="inicio">
+            <h2 class="animate-text">Billar, Tragos y el Mejor Ambiente</h2>
+            <p>Disfruta de nuestras mesas de pool profesionales, amplio surtido de licores y la mejor música de la ciudad.</p>
+            <div class="hero-buttons">
+                <button id="btn-info" class="btn-primary">Reservar Mesa</button>
+                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <h2>Nuestra Especialidad</h2>
+            <p>Todo lo que necesitas para una noche perfecta</p>
+        </div>
+
+        <div class="cards">
+            <div class="card glass-effect">
+                <div class="card-icon">🎱</div>
+                <h3>Mesas Profesionales</h3>
+                <p>Mesas de pool y billar en excelente estado, equipadas con tiza, tacos y bolas de alta calidad.</p>
+            </div>
+
+            <div class="card glass-effect">
+                <div class="card-icon">🍻</div>
+                <h3>Estanco y Bar</h3>
+                <p>Cervezas siempre frías, licores nacionales e importados, cócteles exclusivos y variedad de snacks.</p>
+            </div>
+
+            <div class="card glass-effect">
+                <div class="card-icon">🎵</div>
+                <h3>Excelente Música</h3>
+                <p>El mejor sonido envolvente y ambiente en vivo para compartir con tus amigos toda la noche.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+        <div class="section-header">
+            <h2>Nuestro Ambiente</h2>
+            <p>Conoce nuestras increíbles instalaciones</p>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1549405404-7063bd8aee6e?q=80&w=1200&auto=format&fit=crop" alt="Mesas de Billar">
+                <div class="item-overlay">Mesas de Pool Profesionales</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552382101-7fa1c4e97686?q=80&w=1200&auto=format&fit=crop" alt="Bar y Licores">
+                <div class="item-overlay">Zona de Bar y Exclusividad</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517457210594-5232cd3e7be6?q=80&w=1200&auto=format&fit=crop" alt="Ambiente Nocturno">
+                <div class="item-overlay">El Mejor Entretenimiento</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-card glass-effect">
+            <div class="contact-info">
+                <h2>¿Listo para jugar?</h2>
+                <p>Reserva tu mesa con antelación o contáctanos para organizar tus eventos. Estamos abiertos desde las 2:00 PM hasta la madrugada.</p>
+                <ul class="contact-details">
+                    <li>📍 Calle 34 # 1E - 35</li>
+                    <li>📞 +57 3208553267</li>
+                    <li>🕒 Mie-Dom: 2:00 PM - 3:00 AM</li>
+                </ul>
+            </div>
+            <form id="contactForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Tu Nombre Completo" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="¿Cuántas mesas o qué necesitas reservar?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-100">Confirmar Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2 class="logo">Tamarindos<span class="highlight">Pool</span></h2>
+            <p>© 2026 Tamarindos Pool & Estanco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+:root {
+    --primary: #00f3ff;
+    --primary-hover: #00c3cc;
+    --bg-dark: #07090f;
+    --bg-card: rgba(20, 25, 40, 0.6);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Typography & Layout */
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 12px rgba(0, 243, 255, 0.5);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+/* Glassmorphism Utilities */
+.glass-effect {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(7, 9, 15, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    bottom: 0;
+    left: 0;
+    transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1549405404-7063bd8aee6e?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(7, 9, 15, 0.8), rgba(7, 9, 15, 0.98));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.hero-content h2 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ffffff, #00f3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 1s ease 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #000;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Sections */
+.services, .gallery, .contact {
+    padding: 120px 8%;
+    position: relative;
+}
+
+/* Services Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    padding: 50px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 45px rgba(0, 243, 255, 0.15);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2) 60%, transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover .item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.contact-details {
+    list-style: none;
+}
+
+.contact-details li {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.input-group textarea {
+    min-height: 160px;
+    resize: none;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+footer {
+    background: #04060a;
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+footer .logo {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Queries */
+@media (max-width: 900px) {
+    .contact-card {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+    
+    .hero-content h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(7, 9, 15, 0.95);
+    }
+    
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .services, .gallery, .contact {
+        padding: 80px 5%;
+    }
+}
